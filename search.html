@@ -14,48 +14,57 @@
         <nav class="navbar">
           <div class="container">
             <div class="navbar-brand">
-              <h1 class="has-text-white has-text-weight-bold is-size-3 pl-n5 pt-3">WatchIt</h1>
+              <h1 class="has-text-white has-text-weight-bold is-size-3 pl-n5 pt-2">WatchIt</h1>
+              <h1 class="fas fa-film has-text-dark is-size-3 pt-4"></h1>
             </div>
           </div>
         </nav>
       </div>
       <div class="hero-body">
-        <div class="columns mt-5 pt-3">
-          <h2 class="column has-text-centered has-text-weight-bold is-size-3 has-text-black">What do you want to watch?</h2>
-        </div>
-        <div class="columns pb-5">
-          <input class="input is-rounded is-danger is-medium is-loading column is-half is-offset-one-quarter" type="text" placeholder="Search">
-        </div>
-        <div class="columns is-centered">
-          <div class="dropdown is-hoverable">
-            <div class="dropdown-trigger">
-              <button class="button is-danger is-rounded" aria-haspopup="true" aria-controls="dropdown-menu">
-                <span>Your previous searches</span>
-                <span class="icon is-small">
-                  <i class="fas fa-angle-down" aria-hidden="true"></i>
-                </span>
-              </button>
+        <div class="field has-text-centered">
+            <div class="p-3 my-3 label">
+              <h2 class="has-text-centered has-text-weight-bold is-size-3 has-text-white">What do you want to watch?</h2>
             </div>
-            <div class="dropdown-menu" id="dropdown-menu" role="menu">
-              <div class="dropdown-content">
-                <div class="dropdown-item is-rounded">
-                  <p class="has-text-centered">You haven't searched anything (yet)!</p>
+            <div class="p-3 my-3 control">
+              <input class="input is-rounded is-danger is-medium is-loading has-text-centered" type="text" placeholder="Search">
+            </div>
+            <div class="p-3 my-3 control">
+              <div class="dropdown is-hoverable">
+                <div class="dropdown-trigger">
+                  <button class="button is-danger is-rounded" aria-haspopup="true" aria-controls="dropdown-menu">
+                    <span>Your previous searches</span>
+                    <span class="icon is-small">
+                      <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                  </button>
+                </div>
+                <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                  <div class="dropdown-content">
+                    <div class="dropdown-item is-rounded">
+                      <p class="has-text-centered">You haven't searched anything (yet)!</p>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div> 
+            </div> 
+        </div>
+
+        
+        <!--Divs for API content will go here-->
+
+
+
       </div>
       <div class="hero-foot">
         <nav class="tabs">
           <div class="container">
             <ul>
-              <li class="is-active"><a>Overview</a></li>
-              <li><a>Modifiers</a></li>
-              <li><a>Grid</a></li>
-              <li><a>Elements</a></li>
-              <li><a>Components</a></li>
-              <li><a>Layout</a></li>
+              <li class="is-active"><a>Netflix</a></li>
+              <li><a>Hulu</a></li>
+              <li><a>Amazon Prime</a></li>
+              <li><a>HBO</a></li>
+              <li><a>Crunchyroll</a></li>
+              <li><a>Disney+</a></li>
             </ul>
           </div>
         </nav>

@@ -1,3 +1,8 @@
-body {
-    background-color: gray;
+.field {
+    margin: auto;
+    margin-top: -50px;
+    width: 50%;
+}
+nav h1 {
+    margin-left: 10px;
 }
