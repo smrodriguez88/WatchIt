@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WatchIt</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <link rel="stylesheet" href="search.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+  </head>
+  <body>
+    <section class="hero is-success is-fullheight">
+      <div class="hero-head">
+        <nav class="navbar">
+          <div class="container">
+            <div class="navbar-brand">
+              <h1 class="has-text-white has-text-weight-bold is-size-3 pl-n5 pt-3">WatchIt</h1>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="hero-body">
+        <div class="columns mt-5 pt-3">
+          <h2 class="column has-text-centered has-text-weight-bold is-size-3 has-text-black">What do you want to watch?</h2>
+        </div>
+        <div class="columns pb-5">
+          <input class="input is-rounded is-danger is-medium is-loading column is-half is-offset-one-quarter" type="text" placeholder="Search">
+        </div>
+        <div class="columns is-centered">
+          <div class="dropdown is-hoverable">
+            <div class="dropdown-trigger">
+              <button class="button is-danger is-rounded" aria-haspopup="true" aria-controls="dropdown-menu">
+                <span>Your previous searches</span>
+                <span class="icon is-small">
+                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                </span>
+              </button>
+            </div>
+            <div class="dropdown-menu" id="dropdown-menu" role="menu">
+              <div class="dropdown-content">
+                <div class="dropdown-item is-rounded">
+                  <p class="has-text-centered">You haven't searched anything (yet)!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+      <div class="hero-foot">
+        <nav class="tabs">
+          <div class="container">
+            <ul>
+              <li class="is-active"><a>Overview</a></li>
+              <li><a>Modifiers</a></li>
+              <li><a>Grid</a></li>
+              <li><a>Elements</a></li>
+              <li><a>Components</a></li>
+              <li><a>Layout</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </section>
+  </body>
+</html>
