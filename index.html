@@ -2,115 +2,13 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, $size-1">
     <title>WatchIt</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
- 
-  <!-- <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="https://bulma.io">
-        <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
-      </a>
+ <body>
   
-      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
-  
-    <div id="navbarBasicExample" class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item">
-          Home
-        </a>
-  
-        <a class="navbar-item">
-          Documentation
-        </a>
-  
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">
-            More
-          </a>
-  
-          <div class="navbar-dropdown">
-            <a class="navbar-item">
-              About
-            </a>
-            <a class="navbar-item">
-              Jobs
-            </a>
-            <a class="navbar-item">
-              Contact
-            </a>
-            <hr class="navbar-divider">
-            <a class="navbar-item">
-              Report an issue
-            </a>
-          </div>
-        </div>
-      </div>
-  
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="buttons">
-            <a class="button is-primary">
-              <strong>Sign up</strong>
-            </a>
-            <a class="button is-light">
-              Log in
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <body>
-    
-    <div class="bg-img">
-      
-      <div style="text-align: center;">
-  <section class="hero is-link is-fullheight-with-navbar">
-    <div class="hero-body">
-    <div class="container">
-      <h1 class="title">
-        WatchIt
-      </h1>
-      <p class="subtitle">
-        Welcome to the WatchIt experience! The days of searching endlessly for your favorite TV shows and Movies is over. 
-        Powered by the leading databases for entertainment our app gives you instant access to thousands of Movies and TV shows 
-        from all genres! We even have an exclusive Anime category combined of 7 databases solely focussed on Anime content. 
-        In the app, you are able to filter your results to the streaming platforms that you’re exclusively subscribed to! 
-        If your preferred streaming platform doesn’t have the Movie or TV show available our app will list the platform that does! 
-        Once your eye is set on a selection simply click or tap the “Watch It” button to begin viewing.  
-      </p>
-      <h2>Check off the streaming services that you subscribe to so we can filter your results! </h2>
-      <label class="checkbox">
-        <br><input type="checkbox" id="netflix">
-        Netflix
-        <br><input type="checkbox" id="hulu">
-        Hulu
-        <br><input type="checkbox" id="amazonprime">
-        AmazonPrime
-        <br><input type="checkbox" id="app">
-        AmazonPrime + Purchase
-        <br><input type="checkbox" id="youtube">
-        YouTube
-        <br><input type="checkbox" id="hbomax">
-        HBO MAX
-        
-      </label>
-
-      <br><button class="button" >Continue</button>
-    </div>
-    </div>
-  </section>
-</div>
-  </body>
-</div> -->
 <section class="hero is-success is-fullheight">
   <!-- Hero head: will stick at the top -->
   <div class="hero-head">
@@ -157,7 +55,7 @@
     <div class="container has-text-centered" id="greenbg">
       
       <label class="checkbox">
-        <h1 class="title">
+        <h1 class="title" id="is-size-1">
           Welcome to the WatchIt experience! The days of searching endlessly for your favorite TV shows and Movies is over. 
           Powered by the leading databases for entertainment our app gives you instant access to thousands of Movies and TV shows 
           from all genres! We even have an exclusive Anime category combined of 7 databases solely focussed on Anime content. 
@@ -166,7 +64,8 @@
           Once your eye is set on a selection simply click or tap the “Watch It” button to begin viewing.
         </h1>
         <h2>Check off the streaming services that you subscribe to so we can filter your results! </h2>
-        <h3>Subscriptions:</h3>
+        <div id="is-size-4"><h3>Subscriptions:</h3></div>
+        <div id="is-size-1">
         <input type="checkbox" id="netflix">
         Netflix
         <br><input type="checkbox" id="hulu">
@@ -186,6 +85,7 @@
 
       <br><button class="button" >Continue</button>
     </div>
+    </div>
   </div>
 
   <!-- Hero footer: will stick at the bottom -->
@@ -203,5 +103,8 @@
       </div>
     </nav>
   </div> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script src="script.js"></script>
 </section>
+</body>
 </html>
