@@ -1,0 +1,57 @@
+
+
+  .hero-head { 
+    background-image: url(pexels-pixabay-265685.png) ;
+    background-position: center center;
+    background-repeat:  no-repeat;
+    background-attachment: fixed;
+    background-size:  cover;
+    background-color: #999;
+    
+  }
+  .hero-body { 
+    background-image: url(pexels-pixabay-265685.png) ;
+    background-position: center center;
+    background-repeat:  no-repeat;
+    background-attachment: fixed;
+    background-size:  cover;
+    background-color: #999;
+    
+  }
+  .hero-foot { 
+    background-image: url(pexels-pixabay-265685.png) ;
+    background-position: center center;
+    background-repeat:  no-repeat;
+    background-attachment: fixed;
+    background-size:  cover;
+    background-color: #999;
+    
+  }
+  /* h1 {
+    padding: 5px;
+    border: 5px solid transparent;
+    display: inline-block;
+    background-color: rgba(89, 241, 127, 0.685);
+  } */
+
+  label
+  {
+    border: 5px solid transparent;
+    background-color: rgba(89, 241, 127, 0.685);
+    padding: center;
+  }
+  .button {
+    border: 5px solid transparent;
+    margin: 10px;
+    }
+  /* h3 {
+      size: 100ch;
+      margin: 20px;
+  } */ */
+  #greenbg {
+    padding: 5px;
+    border: 5px solid transparent;
+    display: inline-block;
+    background-color: rgba(89, 241, 127, 0.685);
+
+  }
