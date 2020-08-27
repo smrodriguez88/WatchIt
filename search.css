@@ -5,4 +5,13 @@
 }
 nav h1 {
     margin-left: 10px;
+    font-family: 'Paytone One', sans-serif;
+}
+
+.paytone {
+    font-family: 'Paytone One', sans-serif;
+}
+
+.oswald {
+    font-family: 'Oswald', sans-serif;
 }

@@ -6,6 +6,7 @@
     <title>WatchIt</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     <link rel="stylesheet" href="search.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Paytone+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
   </head>
   <body>
@@ -23,15 +24,15 @@
       <div class="hero-body">
         <div class="field has-text-centered">
             <div class="p-3 my-3 label">
-              <h2 class="has-text-centered has-text-weight-bold is-size-3 has-text-white">What do you want to watch?</h2>
+              <h2 class="has-text-centered has-text-weight-bold is-size-3 has-text-white paytone">What do you want to watch?</h2>
             </div>
             <div class="p-3 my-3 control">
-              <input class="input is-rounded is-danger is-medium is-loading has-text-centered" type="text" placeholder="Search">
+              <input class="input is-rounded is-danger is-medium is-loading has-text-centered oswald" type="text" placeholder="Search">
             </div>
             <div class="p-3 my-3 control">
               <div class="dropdown is-hoverable">
                 <div class="dropdown-trigger">
-                  <button class="button is-danger is-rounded" aria-haspopup="true" aria-controls="dropdown-menu">
+                  <button class="button is-danger is-rounded oswald is-size-5" aria-haspopup="true" aria-controls="dropdown-menu">
                     <span>Your previous searches</span>
                     <span class="icon is-small">
                       <i class="fas fa-angle-down" aria-hidden="true"></i>
@@ -41,7 +42,7 @@
                 <div class="dropdown-menu" id="dropdown-menu" role="menu">
                   <div class="dropdown-content">
                     <div class="dropdown-item is-rounded">
-                      <p class="has-text-centered">You haven't searched anything (yet)!</p>
+                      <p class="has-text-centered oswald">You haven't searched anything (yet)!</p>
                     </div>
                   </div>
                 </div>
@@ -58,14 +59,14 @@
       <div class="hero-foot">
         <nav class="tabs">
           <div class="container">
-            <ul>
-              <li class="is-active"><a>Your Services:</a></li>
-              <li><a>Netlix</a></li>
-              <li><a>Hulu</a></li>
-              <li><a>Amazon Prime</a></li>
-              <li><a>HBO</a></li>
-              <li><a>Crunchyroll</a></li>
-              <li><a>Disney+</a></li>
+            <ul id="services" class="oswald has-text-danger">
+              <li class="has-text-weight-bold">Your Services:</li>
+              <li id="netflix"></li>
+              <li id="hulu"></li>
+              <li id="amazon"></li>
+              <li id="hbo"></li>
+              <li id="crunchyroll"></li>
+              <li id="disney"></li>
               <li><a href="index.html">Change</a></li>
             </ul>
           </div>
