@@ -1,10 +1,9 @@
 .field {
     margin: auto;
-    margin-top: -50px;
     width: 50%;
 }
 nav h1 {
-    margin-left: 10px;
+    margin-left: 5px;
     font-family: 'Paytone One', sans-serif;
 }
 
@@ -14,4 +13,8 @@ nav h1 {
 
 .oswald {
     font-family: 'Oswald', sans-serif;
+}
+
+body {
+    background-color: #48c774;
 }
