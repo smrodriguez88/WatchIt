@@ -1,6 +1,6 @@
-.field {
-    margin: auto;
-    width: 50%;
+.navbar {
+    border-bottom: solid 5px white;
+    padding: 8px;
 }
 nav h1 {
     margin-left: 5px;
@@ -9,15 +9,34 @@ nav h1 {
 
 .paytone {
     font-family: 'Paytone One', sans-serif;
+    
+}
+
+.ltyellow {
+    color: #FEDE81;
+}
+
+.purp {
+    color:#861657;
 }
 
 .oswald {
     font-family: 'Oswald', sans-serif;
 }
 
-/* #showInfoDiv{
-    
-} */
+.box {
+    border: solid 5px white;
+    background-color: #FFD166;
+    color: #861657;
+}
+
+.button {
+    background-color: #EF476F;
+}
+
+.pborder {
+    border: solid 3px #861657;
+}
 
 #showImgDiv {
     height: 300px;
@@ -25,5 +44,10 @@ nav h1 {
 }
 
 body {
-    background-color: #48c774;
+    background-image: url(assets/pexels-pixabay-265685.jpeg);
+    background-position: center;
+    background-repeat:  no-repeat;
+    background-attachment: fixed;
+    background-size:  cover;
+    background-color: #cccccc;
 }

@@ -4,69 +4,67 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>WatchIt</title>
+
+    <!--Bulma CDN-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    
+    <!--My StyleSheet-->
     <link rel="stylesheet" href="search.css">
+
+    <!--Google Fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Paytone+One&display=swap" rel="stylesheet">
+    
+    <!--FontAwesome CDN-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
   </head>
+  
   <body>
     <!--Navbar Section-->
     <nav class="navbar is-success">
-      <div class="container">
-        <div class="navbar-brand">
-          <h1 class="has-text-white has-text-weight-bold is-size-3 pl-n5 pt-2">WatchIt</h1>
-          <h1 class="fas fa-film has-text-dark is-size-3 pt-4"></h1>
+      <div class="navbar-brand">
+        <h1 class="has-text-weight-bold is-size-3 pl-3 paytone ltyellow mr-1">WatchIt</h1>
+        <h1 class="fas fa-film is-size-3 pt-2 has-text-white"></h1>
+      </div>
+
+      <!--Previous Search Dropdown-->
+      <div class="navbar-end">
+        
+        <!--SearchBar Header-->
+        <div class="navbar-item">
+          <h2 class="paytone purp is-size-5">What do you want to watch?</h2>
+        </div>
+
+        <!--Actual SearchBar-->
+        <div class="navbar-item">
+          <input id="searchBar" class="input is-rounded is-loading oswald pborder" type="text" placeholder="Search">
+        </div>
+
+        <!--Submit Search Button-->
+        <div class="navbar-item">
+          <button id="submit" class="button has-text-white is-rounded oswald pborder">Search this title</button>
+        </div>
+        <div class="navbar-item dropdown is-hoverable">
+          <div class="dropdown-trigger">
+            <button class="button is-rounded oswald is-size-6 has-text-white pborder" aria-haspopup="true" aria-controls="dropdown-menu">
+              <span>Your previous searches</span>
+              <span class="icon is-small">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+
+          <!--Previous Searched Items-->
+          <div class="dropdown-menu" id="dropdown-menu" role="menu">
+            <div class="dropdown-content">
+              <div class="dropdown-item is-rounded">
+                <p class="has-text-centered oswald is-size-6">You haven't searched anything (yet)!</p>
+              </div>
+              <!-- to make more previous search history from lcl strg, create divs w/ class dropdown-item appended to .dropdown-content-->
+            </div>
+          </div>
         </div>
       </div>
     </nav>
-
-    <!--SearchBar Section-->
-    <div class="container">
-      <div class="columns is-centered is-multiline">
-        <div class="column">
-          <div class="field has-text-centered">
-            
-            <!--SearchBar Header-->
-            <div class="p-3 my-3 label">
-              <h2 class="has-text-centered has-text-weight-bold is-size-3 has-text-white paytone">What do you want to watch?</h2>
-            </div>
-            
-            <!--Actual SearchBar-->
-            <div class="p-3 my-3 control">
-              <input id="searchBar" class="input is-rounded is-danger is-medium is-loading has-text-centered oswald" type="text" placeholder="Search">
-            </div>
-
-            <!--Submit Search Button-->
-            <button id="submit" class="button is-danger is-rounded oswald">Search this title</button>
-            
-            <!--Previous Search Dropdown-->
-            <div class="p-3 my-3 control">
-              <div class="dropdown is-hoverable">
-                <div class="dropdown-trigger">
-                  <button class="button is-danger is-rounded oswald is-size-6" aria-haspopup="true" aria-controls="dropdown-menu">
-                    <span>Your previous searches</span>
-                    <span class="icon is-small">
-                      <i class="fas fa-angle-down" aria-hidden="true"></i>
-                    </span>
-                  </button>
-                </div>
-
-                <!--Previous Searched Items-->
-                <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                  <div class="dropdown-content">
-                    <div class="dropdown-item is-rounded">
-                      <p class="has-text-centered oswald is-size-6">You haven't searched anything (yet)!</p>
-                    </div>
-                    <!-- to make more previous search history from lcl strg, create divs w/ class dropdown-item appended to .dropdown-content-->
-                  </div>
-                </div>
-              </div>
-            </div> 
-
-          </div>  
-        </div>
-      </div>
-    </div>
 
     <!--Container of selected search result info-->
     <div class="container mt-6 px-3" id="showInfoDiv">
