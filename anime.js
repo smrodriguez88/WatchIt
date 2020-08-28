@@ -14,55 +14,49 @@ function displayAnimeInfo(anime){
     for(var i = 0; i < response.data.length; i++){
       var rating = response.data[i].attributes.averageRating
       console.log(rating)
-      //store slug
       var slug= response.data[i].attributes.slug
       console.log(slug)
-      //store canonicalTitle
-      varCanonicalTitle
-      
-    
+      var canonicalTitle=response.data[i].attributes.canonicalTitle
+      console.log(canonicalTitle)
+      var description= response.data[i].attributes.description
+
+      //var image=response.data[i].attributes.coverImage.original
     }
 
     //create an element to hold the rating
     var pOne=$('<p>').text('Rating:'+rating)
     //displaying ther rating
     animeDiv.append(pOne);
-    //creating an element to hold the slug 
+    //creat element to hold the slug
     var pTwo=$('<p>').text('Slug'+slug)
-    //display the slug 
-    animeDiv.append(pTwo)
-    //putting entire
+    //display slug
+    animeDiv.append(pTwo);
+    // element to hold Title
+    var pThree=$('<p>').text('CanonicalTitle'+canonicalTitle)
+    //display the title
+    animeDiv.append(pThree)
+    // element to hold the plot 
+    var pFour=$('<p>').text('Description'+description)
+    // display the plot
+    animeDiv.append(pFour)
+    //relement to hold the image
+    //var iOne=$('img').attr('src',image)
+    // append to display
+    //animeDiv.append(iOne)
+    //putting entire object into animeDiv Element
     $('#anime-view').prepend(animeDiv);
     console.log(rating)
   });}
 
-//displayAnimeInfo()
-//function displayAnimeInfobySlug(){
-  //$.ajax({url: "https://kitsu.io/api/graphql",
-              //contentType: "application/json",
-             // type:'GET',
-              //data: JSON.stringify({query: {findAnimeBySlug(slug: 'fullmetal-alchemist'){streamingLinks, { nodes { streamer { siteName } url } } } }}),
- // }).then(function(response){
-   // console.log(response)
-   // })
-//button click function 
 
+//button click event
 $('#add-anime').on('click',function(event){
   event.preventDefault();
   var anime=$('#anime-input').val().trim();
   displayAnimeInfo(anime)})
- 
 
-//displayAnimeInfo()
-//function displayAnimeInfobySlug(){
-  //$.ajax({url: "https://kitsu.io/api/graphql",
-              //contentType: "application/json",
-             // type:'GET',
-              //data: JSON.stringify({query: {findAnimeBySlug(slug: 'fullmetal-alchemist'){streamingLinks, { nodes { streamer { siteName } url } } } }}),
- // }).then(function(response){
-   // console.log(response)
-   // })
-//button click function 
+//run the function
+displayAnimeInfo()
 
 
 
