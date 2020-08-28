@@ -1,65 +1,68 @@
-
-var queryURLt="https://kitsu.io/api/edge/anime?filter%5Btext%5D=Bleach";
- $.ajax({
-  url: queryURLt,
-  method: "GET"
-}).then(function(response){
-  console.log(response)
-})
-
-console.log('Hi')
-////
-
-var animes=["Cowboy Beebop","Bleach"];
-
 //function to display anime Info 
-function displayAnimeInfo(){
-  var anime=$(this).attr('data-name');
+function displayAnimeInfo(anime){
   var queryURL="https://kitsu.io/api/edge/anime?filter%5Btext%5D="+anime;
-}
-//ajax call
-$.ajax({
-  url: queryURL, 
-  method:"GET"
-}).then(function(response){
 
-  //Create a div to hold the anime
-  var animeDiv=$("<div class='anime'>");
-  //store the rating data
-  var rating= response.data[i].averageRating
-  //create an element to hold the rating
-  var pOne=$('<p>').text('Rating:'+rating)
-  //displaying ther rating
-  animeDiv.append(pOne);
-  //putting entire
-  $('#anime-view').prepend(animeDiv);
-  
-});
+  //ajax call
+  $.ajax({
+    url: queryURL, 
+    method:"GET"
+  }).then(function(response){
+    console.log(response)
+    //Create a div to hold the anime
+    var animeDiv=$("<div class='anime'>");
+    //store the rating data
+    for(var i = 0; i < response.data.length; i++){
+      var rating = response.data[i].attributes.averageRating
+      console.log(rating)
+      //store slug
+      var slug= response.data[i].attributes.slug
+      console.log(slug)
+      //store canonicalTitle
+      varCanonicalTitle
+      
+    
+    }
 
-function renderButtons(){
-  $("#anime-view").empty();
-for (var i=0;i<animes.length;i++){
-//this add buttons and the atrributes copying from activity 10
-var a= $('<button>');
-a.addClass('anime');
-a.attr('data-name',animes[i]);
-a.text(animes[i]);
-$('#anime-view').append(a);
-}
-}
+    //create an element to hold the rating
+    var pOne=$('<p>').text('Rating:'+rating)
+    //displaying ther rating
+    animeDiv.append(pOne);
+    //creating an element to hold the slug 
+    var pTwo=$('<p>').text('Slug'+slug)
+    //display the slug 
+    animeDiv.append(pTwo)
+    //putting entire
+    $('#anime-view').prepend(animeDiv);
+    console.log(rating)
+  });}
+
+//displayAnimeInfo()
+//function displayAnimeInfobySlug(){
+  //$.ajax({url: "https://kitsu.io/api/graphql",
+              //contentType: "application/json",
+             // type:'GET',
+              //data: JSON.stringify({query: {findAnimeBySlug(slug: 'fullmetal-alchemist'){streamingLinks, { nodes { streamer { siteName } url } } } }}),
+ // }).then(function(response){
+   // console.log(response)
+   // })
 //button click function 
 
 $('#add-anime').on('click',function(event){
   event.preventDefault();
   var anime=$('#anime-input').val().trim();
-  animes.push(anime);
+  displayAnimeInfo(anime)})
+ 
 
-  renderButtons();
-});
-$(document).on('click',".anime-btn",displayAnimeInfo)
-renderButtons();
-
-
+//displayAnimeInfo()
+//function displayAnimeInfobySlug(){
+  //$.ajax({url: "https://kitsu.io/api/graphql",
+              //contentType: "application/json",
+             // type:'GET',
+              //data: JSON.stringify({query: {findAnimeBySlug(slug: 'fullmetal-alchemist'){streamingLinks, { nodes { streamer { siteName } url } } } }}),
+ // }).then(function(response){
+   // console.log(response)
+   // })
+//button click function 
 
 
 
