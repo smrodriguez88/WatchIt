@@ -18,8 +18,7 @@ function displayAnimeInfo(anime){
       console.log(slug)
       var canonicalTitle=response.data[i].attributes.canonicalTitle
       console.log(canonicalTitle)
-      var description= response.data[i].attributes.description
-
+      var description= response.data[i].attributes.synopsis
       //var image=response.data[i].attributes.coverImage.original
     }
 
