@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
   </head>
   <body>
-    
+    <!--Navbar Section-->
     <nav class="navbar is-success">
       <div class="container">
         <div class="navbar-brand">
@@ -19,16 +19,27 @@
         </div>
       </div>
     </nav>
+
+    <!--SearchBar Section-->
     <div class="container">
       <div class="columns is-centered is-multiline">
         <div class="column">
           <div class="field has-text-centered">
+            
+            <!--SearchBar Header-->
             <div class="p-3 my-3 label">
               <h2 class="has-text-centered has-text-weight-bold is-size-3 has-text-white paytone">What do you want to watch?</h2>
             </div>
+            
+            <!--Actual SearchBar-->
             <div class="p-3 my-3 control">
-              <input class="input is-rounded is-danger is-medium is-loading has-text-centered oswald" type="text" placeholder="Search">
+              <input id="searchBar" class="input is-rounded is-danger is-medium is-loading has-text-centered oswald" type="text" placeholder="Search">
             </div>
+
+            <!--Submit Search Button-->
+            <button id="submit" class="button is-danger is-rounded oswald">Search this title</button>
+            
+            <!--Previous Search Dropdown-->
             <div class="p-3 my-3 control">
               <div class="dropdown is-hoverable">
                 <div class="dropdown-trigger">
@@ -39,26 +50,30 @@
                     </span>
                   </button>
                 </div>
+
+                <!--Previous Searched Items-->
                 <div class="dropdown-menu" id="dropdown-menu" role="menu">
                   <div class="dropdown-content">
                     <div class="dropdown-item is-rounded">
                       <p class="has-text-centered oswald is-size-6">You haven't searched anything (yet)!</p>
                     </div>
-
                     <!-- to make more previous search history from lcl strg, create divs w/ class dropdown-item appended to .dropdown-content-->
-                  
                   </div>
                 </div>
               </div>
             </div> 
+
           </div>  
         </div>
       </div>
     </div>
-        <!--Divs for API content will go here-->
-    <div class="container">
-      <div class="columns is-multiline">
-        <div class="column">
+
+    <!--Container of selected search result info-->
+    <div class="container mt-6 px-3" id="showInfoDiv">
+      <div class="columns is-multiline m-3">
+        <div class="column is-7">
+          
+          <!--Show info-->
           <div id="showTitle" class="paytone box">
             Example
           <div id="releaseDate">
@@ -66,18 +81,23 @@
           </div>
           </div>
           <div id="showImgDiv" class="box">
-            <img id="showImg" class="image is-16by9" src="" alt="">
+            <img id="showImg" class="image" src="" alt="">
           </div>
           <div id="showBlurb" class="box"></div>
         </div>
-        <div class="column box">
+
+        <div class="column box ml-5">
+
+          <!--Services for show-->
           <div id="yourServices"></div>
           <div id="otherServices"></div>
         </div>
+
       </div>
     </div>
     
-    <nav class="tabs">
+    <!--Footer-->
+    <nav class="tabs mt-6">
       <div class="container">
         <ul id="subscriptions" class="oswald has-text-danger">
           <li class="has-text-weight-bold">Your Services:</li>

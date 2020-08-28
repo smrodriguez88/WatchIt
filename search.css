@@ -15,6 +15,15 @@ nav h1 {
     font-family: 'Oswald', sans-serif;
 }
 
+/* #showInfoDiv{
+    
+} */
+
+#showImgDiv {
+    height: 300px;
+    width: 225px;
+}
+
 body {
     background-color: #48c774;
 }
