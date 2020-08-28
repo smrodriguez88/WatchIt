@@ -16,8 +16,16 @@ nav h1 {
     color: #FEDE81;
 }
 
+.green {
+    color: rgb(0, 100, 62);
+}
+
 .purp {
     color:#861657;
+}
+
+.pink {
+    color: #EF476F;
 }
 
 .oswald {
@@ -26,8 +34,12 @@ nav h1 {
 
 .box {
     border: solid 5px white;
-    background-color: #FFD166;
     color: #861657;
+    background: rgba(255, 209,102,0.8);
+    
+}
+#servicesDiv{
+    height: fit-content;
 }
 
 .button {
@@ -40,7 +52,7 @@ nav h1 {
 
 #showImgDiv {
     height: 300px;
-    width: 225px;
+   
 }
 
 body {
