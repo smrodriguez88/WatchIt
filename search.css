@@ -38,8 +38,15 @@ nav h1 {
     background: rgba(255, 209,102,0.8);
     
 }
-#servicesDiv{
-    height: fit-content;
+
+a {
+    color: white;
+    font-style: italic;
+}
+
+.tabs a {
+    color: white;
+    
 }
 
 .button {
@@ -51,8 +58,14 @@ nav h1 {
 }
 
 #showImgDiv {
-    height: 300px;
+    height: fit-content;
+    width: fit-content;
    
+}
+
+img {
+    border: solid 5px white; 
+    border-radius: 5px;
 }
 
 body {
