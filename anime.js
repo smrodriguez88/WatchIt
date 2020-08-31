@@ -60,11 +60,13 @@ displayAnimeInfo()
 
 
 
+//THIS GIVES ME BACK HULU BUT IS NOT ATTACHED TO THE ANIME :(
+$.ajax({
+  url: 'https://kitsu.io/api/edge/streamers/1', 
+  method:"GET"
+}).then(function(response){
 
-
-
-
-
+console.log(response)})
 
 
 
@@ -106,7 +108,7 @@ displayAnimeInfo()
           //streamer {
             //siteName
           //}
-          //url
+          //u/rl
         //}
       //}
     //}
