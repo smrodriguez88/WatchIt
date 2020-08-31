@@ -63,8 +63,14 @@ a {
    
 }
 
-img {
+#showImg img {
     border: solid 5px white; 
+    border-radius: 5px;
+}
+
+#showResultsDiv img {
+    height: 100px;
+    border: solid 3px white; 
     border-radius: 5px;
 }
 
@@ -73,6 +79,11 @@ body {
     background-position: center;
     background-repeat:  no-repeat;
     background-attachment: fixed;
-    background-size:  cover;
+    background-size: cover;
     background-color: #cccccc;
+}
+
+
+.hide {
+    visibility: hidden;
 }
