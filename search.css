@@ -8,8 +8,7 @@ nav h1 {
 }
 
 .paytone {
-    font-family: 'Paytone One', sans-serif;
-    
+    font-family: 'Paytone One', sans-serif;  
 }
 
 .ltyellow {
@@ -57,10 +56,11 @@ a {
     border: solid 3px #861657;
 }
 
+
+
 #showImgDiv {
     height: fit-content;
     width: fit-content;
-   
 }
 
 #showImg img {
@@ -74,16 +74,25 @@ a {
     border-radius: 5px;
 }
 
+.fix-footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
 body {
     background-image: url(assets/pexels-pixabay-265685.jpeg);
-    background-position: center;
+    background-position: center center;
     background-repeat:  no-repeat;
     background-attachment: fixed;
     background-size: cover;
     background-color: #cccccc;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 
-.hide {
+/* .hide {
     visibility: hidden;
-}
+} */
