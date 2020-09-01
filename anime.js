@@ -93,8 +93,19 @@ $.ajax({
     method:"GET"
   }).then(function(response){ 
     console.log(response)
+    console.log(response.Actors)
+    console.log(response.Plot)
+    console.log(response.Directors)
+    console.log(response.Title)
+    console.log(response.Genre)
+    console.log(response.Runtime)
+    console.log(response.Year)
+
     
-    
+    //creating variable for teh attributes
+    var actors=(response.Actors)
+    var plot=(response.Plot)
+    var directors=(response.Directors)
    
 
   })
