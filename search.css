@@ -56,14 +56,12 @@ a {
     border: solid 3px #861657;
 }
 
-
-
 #showImgDiv {
     height: fit-content;
     width: fit-content;
 }
 
-#showImg img {
+#showImgDiv img {
     border: solid 5px white; 
     border-radius: 5px;
 }
@@ -74,10 +72,8 @@ a {
     border-radius: 5px;
 }
 
-.fix-footer {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
+#wrapper {
+    flex: 1;
 }
 
 body {
@@ -91,8 +87,3 @@ body {
     min-height: 100vh;
     flex-direction: column;
 }
-
-
-/* .hide {
-    visibility: hidden;
-} */

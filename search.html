@@ -19,149 +19,117 @@
   </head>
   
   <body>
-    <!--Navbar Section-->
-    <nav class="navbar is-success">
-      <div class="navbar-brand">
-        <h1 class="has-text-weight-bold is-size-3 pl-3 paytone ltyellow mr-1">WatchIt</h1>
-        <h1 class="fas fa-film is-size-3 pt-2 has-text-white"></h1>
-      </div>
-
-      <!--Previous Search Dropdown-->
-      <div class="navbar-end">
-        
-        <!--SearchBar Header-->
-        <div class="navbar-item">
-          <h2 class="paytone purp is-size-5">What do you want to watch?</h2>
+    <div id="wrapper">
+      <!--Navbar Section-->
+      <nav class="navbar is-success">
+        <div class="navbar-brand">
+          <h1 class="has-text-weight-bold is-size-3 pl-3 paytone ltyellow mr-1">WatchIt</h1>
+          <h1 class="fas fa-film is-size-3 pt-2 has-text-white"></h1>
         </div>
 
-        <!--Actual SearchBar-->
-        <div class="navbar-item">
-          <input id="searchBar" class="input is-rounded is-loading oswald pborder" type="text" placeholder="Search">
-        </div>
-
-        <!--Submit Search Button-->
-        <div class="navbar-item">
-          <button id="submit" class="button has-text-white is-rounded oswald pborder">Search this title</button>
-        </div>
-        <div class="navbar-item dropdown is-hoverable">
-          <div class="dropdown-trigger">
-            <button class="button is-rounded oswald is-size-6 has-text-white pborder" aria-haspopup="true" aria-controls="dropdown-menu">
-              <span>Your previous searches</span>
-              <span class="icon is-small">
-                <i class="fas fa-angle-down" aria-hidden="true"></i>
-              </span>
-            </button>
-          </div>
-
-          <!--Previous Searched Items-->
-          <div class="dropdown-menu" id="dropdown-menu" role="menu">
-            <div class="dropdown-content">
-              <div class="dropdown-item is-rounded">
-                <p class="has-text-centered oswald is-size-6">You haven't searched anything (yet)!</p>
-              </div>
-              <!-- to make more previous search history from lcl strg, create divs w/ class dropdown-item appended to .dropdown-content-->
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-
-
-    
-
-    
-    <!--Search Results-->
-    <div class="container mt-6 is-hidden" id="showResultsDiv">
-      <div class="columns is-multiline">
-
-        <!-- Example with picture
-        <div class="column is-8 is-offset-2 box pl-3">
-          <article class="media pb-3">
-            <figure class="media-left">
-              <p class="image is-64x64">
-                <img class="showImg" src="https://m.media-amazon.com/images/M/MV5BMjlmZmI5MDctNDE2YS00YWE0LWE5ZWItZDBhYWQ0NTcxNWRhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX182_CR0,0,182,268_AL_.jpg" alt="">
-              </p>
-            </figure>
-            <div class="media-content">
-              <div class="content">
-                <p class="paytone pb-0 showTitle">
-                  Spirited Away (2005)
-                </p>
-                <p class="oswald description">
-                  During her family's move to the suburbs, a sullen 10-year-old 
-                  girl wanders into a world ruled by gods, witches, and spirits, 
-                  and where humans are changed into beasts.
-                </p>
-              </div>
-            </div>
-          </article> 
-        </div> -->
-
-        <!--Example without picture-->
-        <div class="column is-8 is-offset-2 box pl-3">
-          <p class="paytone pb-0 showTitle">
-            Spirited Away (2005)
-          </p>
-          <p class="oswald description">
-            During her family's move to the suburbs, a sullen 10-year-old 
-            girl wanders into a world ruled by gods, witches, and spirits, 
-            and where humans are changed into beasts.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!--Container of selected search result info-->
-    <div class="container mt-6" id="showInfoDiv">
-      <div class="columns">
-        <div class="column is-10 is-offset-1">
+        <!--Previous Search Dropdown-->
+        <div class="navbar-end">
           
-          <!--Show info-->
-          <div class="paytone box is-size-4 showTitle">
-            Spirited Away (2005)
-            <!-- <div id="releaseDate">
-              (2005)
-            </div> -->
+          <!--SearchBar Header-->
+          <div class="navbar-item">
+            <h2 class="paytone purp is-size-5">What do you want to watch?</h2>
           </div>
-          <div class="columns">
-            <div class="column mt-3 mb-3 is-4 is-offset-2 mr-3">
-              <div id="showImgDiv" class="image box px-5 py-5">
-                <img class="showImg" src="https://m.media-amazon.com/images/M/MV5BMjlmZmI5MDctNDE2YS00YWE0LWE5ZWItZDBhYWQ0NTcxNWRhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX182_CR0,0,182,268_AL_.jpg" alt="">
+
+          <!--Actual SearchBar-->
+          <div class="navbar-item">
+            <input id="searchBar" class="input is-rounded is-loading oswald pborder" type="text" placeholder="Search">
+          </div>
+
+          <!--Submit Search Button-->
+          <div class="navbar-item">
+            <button id="submit" class="button has-text-white is-rounded oswald pborder">Search this title</button>
+          </div>
+          <div class="navbar-item dropdown is-hoverable">
+            <div class="dropdown-trigger">
+              <button class="button is-rounded oswald is-size-6 has-text-white pborder" aria-haspopup="true" aria-controls="dropdown-menu">
+                <span>Your previous searches</span>
+                <span class="icon is-small">
+                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                </span>
+              </button>
+            </div>
+
+            <!--Previous Searched Items-->
+            <div class="dropdown-menu" id="dropdown-menu" role="menu">
+              <div class="dropdown-content">
+                <div class="dropdown-item is-rounded">
+                  <p class="has-text-centered oswald is-size-6">You haven't searched anything (yet)!</p>
+                </div>
+                <!-- to make more previous search history from lcl strg, create divs w/ class dropdown-item appended to .dropdown-content-->
               </div>
             </div>
-            <!--Services for show-->
-            <div class="column box mt-5 mb-5 is-4" id="servicesDiv">
-              <div class="oswald pt-5 pl-5 is-size-5 green">
-                <ul id="yourServices">
-                  <h2 class="paytone has-text-weight-bold">Your Services:</h2>
-                  <li class="oswald is-size-5">❂ HBO Max: <a href="">Watch Here</a></li>
-                  <li class="oswald is-size-5">❂ Crunchyroll: <a href="">Watch Here</a></li>
-                </ul>
-              </div>
-              <div class="oswald pt-3 pl-5 is-size-5 purp pb-5">
-                <ul id="otherServices">
-                  <h2 class="paytone has-text-weight-bold">Other Services:</h2>
-                  <li>❂ Netflix: <a href="">Watch Here</a></li>
-                  <li>❂ Disney+: <a href="">Watch Here</a></li>
-                  <li>❂ Amazon: <a href="">Watch Here</a></li>
-                  <li>❂ Hulu: <a href="">Watch Here</a></li>
-                </ul>
-              </div>
-            </div>
           </div>
-          <div id="showBlurb" class="box">
-            <h3 class="paytone has-text-weight-bold">Description:</h3>
-            <div class="oswald description">
+        </div>
+      </nav>
+    
+      <!--Search Results-->
+      <div class="container mt-6 is-hidden" id="showResultsDiv">
+        <div class="columns is-multiline">
+          <div class="column is-8 is-offset-2 box pl-3">
+            <p class="paytone pb-0 showTitle">
+              Spirited Away (2005)
+            </p>
+            <p class="oswald description">
               During her family's move to the suburbs, a sullen 10-year-old 
               girl wanders into a world ruled by gods, witches, and spirits, 
               and where humans are changed into beasts.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!--Container of selected search result info-->
+      <div class="container mt-6 is-hidden" id="showInfoDiv">
+        <div class="columns">
+          <div class="column is-10 is-offset-1">
+            
+            <!--Show/movie info-->
+            <div class="paytone box is-size-4 showTitle">
+              Spirited Away (2005)
+            </div>
+            <div class="columns">
+              <div class="column mt-3 mb-3 is-4 is-offset-2 mr-3">
+                <div id="showImgDiv" class="image box px-5 py-5">
+                  <img class="showImg" src="https://m.media-amazon.com/images/M/MV5BMjlmZmI5MDctNDE2YS00YWE0LWE5ZWItZDBhYWQ0NTcxNWRhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX182_CR0,0,182,268_AL_.jpg" alt="">
+                </div>
+              </div>
+              <!--Services for show-->
+              <div class="column box mt-5 mb-5 is-4" id="servicesDiv">
+                <div class="oswald pt-5 pl-5 is-size-5 green">
+                  <ul id="yourServices">
+                    <h2 class="paytone has-text-weight-bold">Your Services:</h2>
+                    <li class="oswald is-size-5">❂ HBO Max: <a href="">Watch Here</a></li>
+                    <li class="oswald is-size-5">❂ Crunchyroll: <a href="">Watch Here</a></li>
+                  </ul>
+                </div>
+                <div class="oswald pt-3 pl-5 is-size-5 purp pb-5">
+                  <ul id="otherServices">
+                    <h2 class="paytone has-text-weight-bold">Other Services:</h2>
+                    <li>❂ Netflix: <a href="">Watch Here</a></li>
+                    <li>❂ Disney+: <a href="">Watch Here</a></li>
+                    <li>❂ Amazon: <a href="">Watch Here</a></li>
+                    <li>❂ Hulu: <a href="">Watch Here</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div id="showBlurb" class="box">
+              <h3 class="paytone has-text-weight-bold">Description:</h3>
+              <div class="oswald description">
+                During her family's move to the suburbs, a sullen 10-year-old 
+                girl wanders into a world ruled by gods, witches, and spirits, 
+                and where humans are changed into beasts.
+              </div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
-    
     <!--Footer-->
     <nav class="tabs is-fullwidth mt-6 fix-footer">
       <div class="container">
