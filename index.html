@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Paytone+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
   </head>
  <body>
   <!-- <video width="320" height="240" autoplay controls>
@@ -16,48 +17,16 @@
   </video>  -->
 <section class="hero is-success is-fullheight">
   <!-- Hero head: will stick at the top -->
-  <div class="hero-head">
-    <header class="navbar">
-      <div class="container">
-        <div class="navbar-brand">
-          <a class="navbar-item">
-            <img src="https://bulma.io/images/bulma-type-white.png" alt="Logo">
-          </a>
-          <span class="navbar-burger burger" data-target="navbarMenuHeroC">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-        </div>
-        <div id="navbarMenuHeroC" class="navbar-menu">
-          <div class="navbar-end">
-            <a class="navbar-item is-active">
-              Home
-            </a>
-            <a class="navbar-item">
-              Examples
-            </a>
-            <a class="navbar-item">
-              Documentation
-            </a>
-            <span class="navbar-item">
-              <a class="button is-success is-inverted">
-                <span class="icon">
-                  <i class="fab fa-github"></i>
-                </span>
-                <span>Download</span>
-              </a>
-            </span>
-          </div>
-        </div>
-      </div>
-    </header>
-  </div>
-
+  <nav class="navbar is-success">
+    <div class="navbar-brand">
+     <h1 class="has-text-weight-bold is-size-3 pl-3 paytone ltyellow mr-1">WatchIt</h1>
+     <h1 class="fas fa-film is-size-3 pt-2 has-text-white"></h1>
+    </div>
+  </nav>
   <!-- Hero content: will be in the middle -->
-  <div class="hero-body">
-    
-      <div class="container has-text-centered" id="greenbg">
+  <div class="hero-body is-success">
+    <div class="box notification is-success">
+      
       
       
         
@@ -66,9 +35,9 @@
 
         
           
-        <div id="is-size-1">
+        <div id="is-size-1" class="is-success ">
 
-          <h1>
+          <!-- <h1>
             Welcome to the WatchIt experience! The days of searching endlessly for your favorite TV shows and Movies is over.
            Powered by the leading databases for entertainment our app gives you instant access to thousands of Movies and TV shows 
             from all genres! We even have an exclusive Anime category combined of 7 databases solely focussed on Anime content.
@@ -76,98 +45,148 @@
             <p>In the app, you are able to filter your results to the streaming platforms that you’re exclusively subscribed to! 
            If your preferred streaming platform doesn’t have the Movie or TV show available our app will list the platform that does! 
             Once your eye is set on a selection simply click or tap the “Watch It” button to begin viewing.</p>
-          </h1>
+          </h1> -->
           
-          <h2 class="title" id="is-size-1 has-text-weight-bold">Check off the streaming services that you subscribe to so we can filter your results!</h2>
-
-          
-          
-          
-
+          <h2 class="title  has-text-weight-bold has-text-centered is-size-5-touch">Check off the streaming services that you subscribe to so we can filter your results!</h2>
 
           
 
-
-
-
-         
-
-    <div class="tile is-ancestor">
-      <div class="tile is-parent">
-        <article class="tile is-child box has-background-success-dark has-text-white is-12 ">
-          <p class="title">
-            <div id="is-size-4"><h3>Subscriptions:</h3></div>
-            <br>
+    <div class="tile is-parent">
+      <article class="tile is-child notification is-success has-text-white is-12 has-text-centered">
+        <p class="title">
+          <div id="is-size-4 is-size-1-touch"><h3>Subscriptions:</h3></div>
+            
             <!-- <input type="checkbox" id="netflix" > -->
   <!-- Netflix -->
-  <img src="./assets/netflixlogo.0.0.jpg" value="netflix" id="is-clickable">
+  <label class="checkbox">
+    <input type="checkbox">
+  <figure class="image is-96x96 is-text-centered">
+  <img class="is-rounded" src="./assets/netflixlogo.0.0.jpg">
+  </figure>
+  </label>
   <!-- <br><input type="checkbox" id="apv"> -->
   <!-- Amazon Prime Video  -->
-  <img src="./assets/primevideo-seo-logo-square.png">
+  <label class="checkbox">
+    <input type="checkbox">
+  <figure class="image is-96x96 is-text-centered">
+  <img class="is-rounded" src="./assets/primevideo-seo-logo-square.png"></figure>
+  </label>
   <!-- <br><input type="checkbox" id="atp"> -->
   <!-- Apple TV+ -->
-  <img src="./assets/apple.png">
+  <label class="checkbox">
+    <input type="checkbox">
+  <figure class="image is-96x96 is-text-centered">
+  <img class="is-rounded" src="./assets/apple.png"></figure>
+  </label>
   <!-- <br><input type="checkbox" id="youtube"> -->
   <!-- YouTube Premium  -->
-  <img src="./assets/youtube.png">
+  <label class="checkbox">
+    <input type="checkbox">
+  <figure class="image is-96x96 is-text-centered">
+  <img class="is-rounded" src="./assets/youtube.png"></figure>
+  </label>
   <!-- <br><input type="checkbox" id="disneyplus"> -->
   <!-- Disney Plus -->
-  <img src="./assets/Disney-Icon.jpg">
+  <label class="checkbox">
+    <input type="checkbox">
+  <figure class="image is-96x96 is-text-centered">
+  <img class="is-rounded" src="./assets/Disney-Icon.jpg"></figure>
+  </label>
   <!-- <input type="checkbox" id="hulu"> -->
   <!-- Hulu -->
-  <img src="./assets/hulu.png">
+  <label class="checkbox">
+    <input type="checkbox">
+  <figure class="image is-96x96 is-text-centered">
+  <img class="is-rounded" src="./assets/hulu.png"></figure>
+  </label>
   <!-- <input type="checkbox" id="hbo"> -->
   <!-- HBO -->
-  <img src="assets/hbo .jpg">
+  <label class="checkbox">
+    <input type="checkbox">
+ <figure class="image is-96x96 is-text-centered">
+  <img class="is-rounded" src="assets/hbo .jpg"></figure>
+  </label>
   <!-- <input type="checkbox" id="fox"> -->
   <!-- Fox -->
-  <img src="assets/fox.png">
+  <label class="checkbox">
+    <input type="checkbox">
+  <figure class="image is-96x96 is-text-centered">
+  <img class="is-rounded" src="assets/fox.png"></figure>
+  </label>
   <!-- <input type="checkbox" id="cbs"> -->
   <!-- CBS -->
-  <img src="assets/cbs.png">
+  <label class="checkbox">
+    <input type="checkbox">
+  <figure class="image is-96x96 is-text-centered">
+  <img class="is-rounded" src="assets/cbs.png"></figure>
+  </label>
   <!-- <input type="checkbox" id="nbc"> -->
   <!-- NBC -->
   <!-- <input type="checkbox" id="nick"> -->
   <!-- Nickelodeon -->
-  <img src="assets/nick.jpg">
+  <label class="checkbox">
+    <input type="checkbox">
+  <figure class="image is-96x96 is-text-centered">
+  <img class="is-rounded" src="assets/nick.jpg"></figure>
+  </label>
   <!-- <input type="checkbox" id="discovery"> -->
   <!-- Discovery Channel  -->
-  <img src="assets/discovery .png">
+  <label class="checkbox">
+    <input type="checkbox">
+  <figure class="image is-96x96 is-text-centered">
+  <img class="is-rounded" src="assets/discovery .png"></figure>
+  </label>
   <!-- <input type="checkbox" id="dcuniverse"> -->
   <!-- DC Universe -->
-  <img src="assets/dcuniverse.jpg">
-  </p>
+  <label class="checkbox">
+    <input type="checkbox">
+  <figure class="image is-96x96 is-text-centered">
+  <img class="is-rounded" src="assets/dcuniverse.jpg"></figure>
+  </label>
+ 
           
         </article>
       </div>
 
-      <!-- Brings the two tiles closer -->
-      <br>
-
+      
       <div class="tile is-parent">
-        <article class="tile is-child box has-background-success-dark has-text-white is-12 ">
+        <article class="tile is-child notification is-success has-text-white is-12 has-text-centered">
           <p class="title">
             <div id="is-size-4"><h3>Pay-To-Play:</h3></div>
   
   <!-- <br><input type="checkbox" id="app"> -->
-  <br><img src="assets/amazoninstant.png">
+  <label class="checkbox">
+    <input type="checkbox">
+  <figure class="image is-96x96 is-text-centered">
+    <img class="is-rounded" src="assets/amazoninstant.png"></figure>
+    </label>
   <!-- Amazon Instant -->
   <!-- <br><input type="checkbox" id="youtube"> -->
-  <img src="assets/googleplay.jpg">
+  <label class="checkbox">
+    <input type="checkbox">
+  <figure class="image is-96x96 is-text-centered">
+    <img class="is-rounded" src="assets/googleplay.jpg">
+  </figure>
+  </label>
   <!-- YouTube -->
   <!-- <br><input type="checkbox" id="hbomax"> -->
-  <img src="assets/itunes.png">
+  <label class="checkbox">
+    <input type="checkbox">
+  <figure class="image is-96x96 is-text-centered">
+    <img class="is-rounded" src="assets/itunes.png"></figure>
+    </label>
           </p>
+
+      <!-- Continue Button -->
+ <a href=""><button class="button" >Continue</button></href>
         </article>
       </div>
-      
     </div>
-  
+   
     </div>
- <!-- Continue Button -->
- <a href=""><button class="button" >Continue</button></href>
+
  </div>
-    
+</div>
   </div>
 
   <!-- Hero footer: will stick at the bottom -->
@@ -189,51 +208,6 @@
     <script src="script.js"></script>
 </section>
 
-<div class="tile is-ancestor">
-  <div class="tile is-vertical is-8">
-    <div class="tile">
-      <div class="tile is-parent is-vertical">
-        <article class="tile is-child notification is-primary">
-          <p class="title">Vertical...</p>
-          <p class="subtitle">Top tile</p>
-        </article>
-        <article class="tile is-child notification is-warning">
-          <p class="title">...tiles</p>
-          <p class="subtitle">Bottom tile</p>
-        </article>
-      </div>
-      <div class="tile is-parent">
-        <article class="tile is-child notification is-info">
-          <p class="title">Middle tile</p>
-          <p class="subtitle">With an image</p>
-          <figure class="image is-4by3">
-            <img src="https://bulma.io/images/placeholders/640x480.png">
-          </figure>
-        </article>
-      </div>
-    </div>
-    <div class="tile is-parent">
-      <article class="tile is-child notification is-danger">
-        <p class="title">Wide tile</p>
-        <p class="subtitle">Aligned with the right tile</p>
-        <div class="content">
-          <!-- Content -->
-        </div>
-      </article>
-    </div>
-  </div>
-  <div class="tile is-parent">
-    <article class="tile is-child notification is-success">
-      <div class="content">
-        <p class="title">Tall tile</p>
-        <p class="subtitle">With even more content</p>
-        <div class="content">
-          <!-- Content -->
-        </div>
-      </div>
-    </article>
-  </div>
-</div>
 
 
 
