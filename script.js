@@ -36,3 +36,34 @@ $.ajax(settings).done(function (response) {
     console.log(showResults)
     localStorage.setItem(term, JSON.stringify(showResults))
 }});
+
+
+
+function sMovie(searchMovie){
+    var Key="3d6175eb"
+    var MURL="http://www.omdbapi.com/?i="+searchMovie+"&apikey="+Key
+  $.ajax({
+      url:MURL,
+      method:"GET"
+    }).then(function(response){ 
+      console.log(response)
+      console.log(response.Actors)
+      console.log(response.Plot)
+      console.log(response.Directors)
+      console.log(response.Title)
+      console.log(response.Genre)
+      console.log(response.Runtime)
+      console.log(response.Year)
+  
+      
+      //creating variable for teh attributes
+      var actors=(response.Actors)
+      var plot=(response.Plot)
+      var directors=(response.Directors)
+     
+  
+    })
+  
+  }
+  sMovie('tt1234721')
+  
