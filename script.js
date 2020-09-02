@@ -1,4 +1,4 @@
- function utellyMovie(searchMovie){
+function utellyMovie(searchMovie){
 var settings = {
 	"async": false,
 	"crossDomain": true,
@@ -6,7 +6,7 @@ var settings = {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com",
-		"x-rapidapi-key": "5cd25c1681mshc17a6de27e4095fp17a9c9jsna97853c66886"
+		"x-rapidapi-key": ""
 	}
 }
 
@@ -34,7 +34,7 @@ $.ajax(settings).done(function (response) {
             showResults[i].streams[v] = response.results[i].locations[v].url
         }}
         for (var a = 0; a < showResults.length; a++){
-            console.log(showResults)
+            // console.log(showResults)
             imdbid = showResults[a].imdbId
             var Key="3d6175eb"
             var MURL="http://www.omdbapi.com/?i="+imdbid+"&apikey="+Key
@@ -50,17 +50,40 @@ $.ajax(settings).done(function (response) {
                 showResults[a].runtime = response.Runtime
                 showResults[a].year = response.Year               
             })
-        console.log(showResults)
         localStorage.setItem(term, JSON.stringify(showResults))
 }})};
 
-
+function displayTitleResults(searchMovie){
+    results = JSON.parse(localStorage.getItem(searchMovie))
+    console.log(results)
+    $("#resultsList").empty()
+    for (var i = 0; i < results.length; i++){
+        titleBtn = $("<button>").addClass("button has-text-white is-rounded paytone pborder mb-1 ml-3 movieSel").text(results[i].title + " " + "("+results[i].year+")")
+        titleBtn.attr("title-searh", searchMovie)
+        titleBtn.attr("title-index", i)
+        titleDesc = $("<p>").addClass("oswald pl-3").text(results[i].plot)
+        listItem = $("<li>").addClass("mb-3")
+        listItem.append(titleBtn)
+        listItem.append(titleDesc)
+        $("#resultsList").append(listItem)
+        $("#showResultsDiv").removeClass("is-hidden")
+        $(".movieSel").on("click", function(){
+            $("#showInfoDiv").empty()
+            titleSearch = $(this).attr("title-searh")
+            results = JSON.parse(localStorage.getItem(titleSearch))
+            titleIndex = $(this).attr("title-index")
+            console.log(results[titleIndex].title)
+            $("#showInfoDiv").removeClass("is-hidden")
+            $("#titleSelect").append("<h2>"+results[titleIndex].title+"</h2>")
+        })
+    }
+}
 
 $("#submit").on("click", function(){
     event.preventDefault()
     var searchTerm = $("#searchBar").val().trim().toLowerCase()
     utellyMovie(searchTerm)
-
+    displayTitleResults(searchTerm)
 })
   
   
