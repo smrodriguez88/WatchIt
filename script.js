@@ -6,7 +6,7 @@ var settings = {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com",
-		"x-rapidapi-key": ""
+		"x-rapidapi-key": "5cd25c1681mshc17a6de27e4095fp17a9c9jsna97853c66886"
 	}
 }
 
@@ -43,6 +43,7 @@ $.ajax(settings).done(function (response) {
                 "url": MURL,
                 "method": "GET"}
             $.ajax(settings).done(function(response){
+                showResults[a].picture = response.Poster
                 showResults[a].actors = response.Actors
                 showResults[a].plot = response.Plot
                 showResults[a].director = response.Director
@@ -58,8 +59,8 @@ function displayTitleResults(searchMovie){
     console.log(results)
     $("#resultsList").empty()
     for (var i = 0; i < results.length; i++){
-        titleBtn = $("<button>").addClass("button has-text-white is-rounded paytone pborder mb-1 ml-3 movieSel").text(results[i].title + " " + "("+results[i].year+")")
-        titleBtn.attr("title-searh", searchMovie)
+        titleBtn = $("<button>").addClass("button has-text-white paytone pborder mb-1 ml-3 movieSel").text(results[i].title + " " + "("+results[i].year+")")
+        titleBtn.attr("title-search", searchMovie)
         titleBtn.attr("title-index", i)
         titleDesc = $("<p>").addClass("oswald pl-3").text(results[i].plot)
         listItem = $("<li>").addClass("mb-3")
@@ -67,16 +68,67 @@ function displayTitleResults(searchMovie){
         listItem.append(titleDesc)
         $("#resultsList").append(listItem)
         $("#showResultsDiv").removeClass("is-hidden")
+        }
         $(".movieSel").on("click", function(){
-            $("#showInfoDiv").empty()
-            titleSearch = $(this).attr("title-searh")
+            $("#yourServices").empty()
+            titleSearch = $(this).attr("title-search")
             results = JSON.parse(localStorage.getItem(titleSearch))
             titleIndex = $(this).attr("title-index")
-            console.log(results[titleIndex].title)
-            $("#showInfoDiv").removeClass("is-hidden")
-            $("#titleSelect").append("<h2>"+results[titleIndex].title+"</h2>")
+            $("#showInfoDiv").removeClass("is-hidden");
+            $("#titleSelect").html("<center>" + results[titleIndex].title + " (" + results[titleIndex].year + ")</center>");
+            $("#picture").attr("src", results[titleIndex].picture);
+            $("#selectGenre").text(results[titleIndex].genre);
+            $("#selectRuntime").text(results[titleIndex].runtime);
+            $("#selectDirector").text(results[titleIndex].director);
+            $("#selectDesc").text(results[titleIndex].plot);
+            $("#selectActors").text(results[titleIndex].actors);
+            console.log(results[titleIndex])
+            for (var s = 0; s < results[titleIndex].streams.length; s++) {
+                var service;
+                var streamUrls = results[titleIndex].streams[s];
+                console.log(results[titleIndex].streams[s])
+                if (streamUrls.includes("netflix")){
+                    service = "Netflix";
+                } else if (streamUrls.includes("itunes.apple")){
+                    service = "iTunes";
+                } else if (streamUrls.includes("watch.amazon")){
+                    service = "Amazon Prime";
+                } else if (streamUrls.includes("hulu")){
+                    service = "Hulu";
+                } else if (streamUrls.includes("youtube")){
+                    service = "Youtube Premium";
+                } else if (streamUrls.includes("disney")){
+                    service = "Disney Plus";
+                } else if (streamUrls.includes("hbo")){
+                    service = "HBO";
+                } else if (streamUrls.includes("cbs")){
+                    service = "CBS";
+                } else if (streamUrls.includes("fox")){
+                    service = "Fox";
+                } else if (streamUrls.includes("nbc")){
+                    service = "NBC";
+                } else if (streamUrls.includes("nick")){
+                    service = "Nickelodeon";
+                } else if (streamUrls.includes("play.google")){
+                    service = "Google Play";
+                } else if (streamUrls.includes("dcuniverse")){
+                    service = "DC Universe";
+                } else if (streamUrls.includes(".discovery")){
+                    service = "Discovery Channel";
+                } else if (streamUrls.includes("tv.apple")){
+                    service = "Apple TV";
+                } else {
+                    service = "dunno";
+                }
+                
+                $("#yourServices").append("<li>❂ " + service + "<a href=" + results[titleIndex].streams[s] + " target='_blank'> Watch Here</a></li>");
+
+
+            
+            }
+
         })
-    }
+    
 }
 
 $("#submit").on("click", function(){

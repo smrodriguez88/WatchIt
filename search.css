@@ -38,6 +38,12 @@ nav h1 {
     
 }
 
+#showInfoDiv .box {
+    border: solid 5px white;
+    color: #861657;
+    background: rgba(72,199,116, 0.8);
+}
+
 a {
     color: white;
     font-style: italic;
