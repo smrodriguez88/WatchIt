@@ -6,7 +6,7 @@ var settings = {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com",
-		"x-rapidapi-key": ""
+		"x-rapidapi-key": "5cd25c1681mshc17a6de27e4095fp17a9c9jsna97853c66886"
 	}
 }
 
@@ -59,7 +59,7 @@ function displayTitleResults(searchMovie){
     $("#resultsList").empty()
     for (var i = 0; i < results.length; i++){
         titleBtn = $("<button>").addClass("button has-text-white is-rounded paytone pborder mb-1 ml-3 movieSel").text(results[i].title + " " + "("+results[i].year+")")
-        titleBtn.attr("title-searh", searchMovie)
+        titleBtn.attr("title-search", searchMovie)
         titleBtn.attr("title-index", i)
         titleDesc = $("<p>").addClass("oswald pl-3").text(results[i].plot)
         listItem = $("<li>").addClass("mb-3")
@@ -68,13 +68,20 @@ function displayTitleResults(searchMovie){
         $("#resultsList").append(listItem)
         $("#showResultsDiv").removeClass("is-hidden")
         $(".movieSel").on("click", function(){
-            $("#showInfoDiv").empty()
-            titleSearch = $(this).attr("title-searh")
+            titleSearch = $(this).attr("title-search")
             results = JSON.parse(localStorage.getItem(titleSearch))
             titleIndex = $(this).attr("title-index")
             console.log(results[titleIndex].title)
-            $("#showInfoDiv").removeClass("is-hidden")
-            $("#titleSelect").append("<h2>"+results[titleIndex].title+"</h2>")
+            $("#showInfoDiv").removeClass("is-hidden");
+            $("#titleSelect").text(results[titleIndex].title + " (" + results[titleIndex].year + ")");
+            $("#picture").attr("src", results[titleIndex].picture);
+            $("#selectGenre").text(results[titleIndex].genre);
+            $("#selectRuntime").text(results[titleIndex].runtime);
+            $("#selectDirector").text(results[titleIndex].director);
+            $("#selectDesc").text(results[titleIndex].plot);
+            $("#selectActors").text(results[titleIndex].actors);
+            for (var v = 0; v < results[titleIndex].streams.length; v++)
+                $("#yourServices").html("<li>❂ " + "<a href=" + results[titleIndex].streams[v] + ">Watch Here</a></li>")
         })
     }
 }

@@ -79,13 +79,11 @@
           <div class="column is-10 is-offset-1">
             
             <!--Show/movie info-->
-            <div class="paytone box is-size-4" id="titleSelect">
-              
-            </div>
+            <div class="paytone box is-size-4" id="titleSelect"></div>
             <div class="columns">
               <div class="column mt-3 mb-3 is-4 is-offset-2 mr-3">
                 <div id="showImgDiv" class="image box px-5 py-5">
-                  <img class="showImg" src="" alt="">
+                  <img id="picture" src="" alt="image from show">
                 </div>
               </div>
               <!--Services for show-->
@@ -109,12 +107,16 @@
               </div>
             </div>
             <div id="showBlurb" class="box">
+              <h3 class="paytone has-text-weight-bold">Genre:</h3>
+              <div class="oswald" id="selectGenre"></div>
+              <h3 class="paytone has-text-weight-bold">Runtime:</h3>
+              <div class="oswald" id="selectRuntime"></div>
+              <h3 class="paytone has-text-weight-bold">Director:</h3>
+              <div class="oswald" id="selectDirector"></div>
               <h3 class="paytone has-text-weight-bold">Description:</h3>
-              <div class="oswald description">
-                During her family's move to the suburbs, a sullen 10-year-old 
-                girl wanders into a world ruled by gods, witches, and spirits, 
-                and where humans are changed into beasts.
-              </div>
+              <div class="oswald" id="selectDesc"></div>
+              <h3 class="paytone has-text-weight-bold">Actors:</h3>
+              <div class="oswald" id="selectActors"></div>
             </div>
           </div>
         </div>
