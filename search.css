@@ -38,15 +38,17 @@ nav h1 {
     
 }
 
+#showInfoDiv .box {
+    border: solid 5px white;
+    color: #861657;
+    background: rgba(72,199,116, 0.8);
+}
+
 a {
     color: white;
     font-style: italic;
 }
 
-.tabs a {
-    color: white;
-    
-}
 
 .button {
     background-color: #EF476F;
@@ -74,6 +76,11 @@ a {
 
 #wrapper {
     flex: 1;
+}
+
+#footer {
+    border-top: solid 5px white;
+    padding-top: 10px;
 }
 
 body {
