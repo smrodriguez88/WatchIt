@@ -21,7 +21,7 @@
   <body>
     <div id="wrapper">
       <!--Navbar Section-->
-      <nav class="navbar is-success">
+      <nav class="navbar is-success" id="header">
         <div class="navbar-brand">
           <h1 class="has-text-weight-bold is-size-3 pl-3 paytone ltyellow mr-1">WatchIt</h1>
           <h1 class="fas fa-film is-size-3 pt-2 has-text-white"></h1>
@@ -68,7 +68,7 @@
     
       <!--Search Results-->
       <div class="container mt-6 is-hidden box" id="showResultsDiv">
-        <h2 class="paytone purp pt-3 mb-3 pl-3 is-size-3">Search Results:</h2>
+        <h2 class="paytone purp mb-3 pl-3 pb-3 is-size-3">Search Results:</h2>
         <ul class="columns is-multiline px-3" id="resultsList">
           <!-- Populated by js -->
         </ul>    
@@ -123,13 +123,13 @@
     </div>
     
     <!--Footer-->
-    <nav class="navbar fix-footer is-success mx-1" id="footer">
-      <div class="navbar-brand has-text-weight-bold pink paytone is-size-5 pl-3">Your Services:</div>
-      <div id="subscriptions" class="oswald navbar-item is-size-5">
+    <nav class="navbar mt-6" id="footer">
+      <div class="navbar-brand has-text-weight-bold has-text-success paytone is-size-5 pl-3 pt-3">Your Services:</div>
+      <div id="subscriptions" class="navbar-menu is-active oswald is-size-5">
         <!-- Populated by JS -->
       </div>  
       <div class="navbar-end">
-        <a class="is-size-5 has-text-white pr-3" href="index.html">Change</a>
+        <a class="is-size-5 px-3 has-text-success has-text-weight-bold paytone pt-3" href="index.html">Change</a>
       </div>
     </nav>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>

@@ -4,7 +4,7 @@ function utellyMovie(searchMovie){
     searchHistory.push(searchMovie)
     $('#oldSearches').empty(); 
     for(var s = 0; s < searchHistory.length; s++){
-        $("#oldSearches").append('<div class="dropdown-item is-rounded has-text-centered oswald is-size-6"><button class="button p-border histBtn has-text-white" title="'+searchHistory[s]+'">' + searchHistory[s] + '</button></div>')
+        $("#oldSearches").append('<div class="dropdown-item has-text-centered is-size-6"><button class="button is-rounded oswald pborder histBtn has-text-white" title="'+searchHistory[s]+'">' + searchHistory[s] + '</button></div>')
     }
     $(".histBtn").on("click", function(){
         movieTitle = $(this).attr("title")
@@ -18,7 +18,7 @@ function utellyMovie(searchMovie){
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com",
-            "x-rapidapi-key": "5cd25c1681mshc17a6de27e4095fp17a9c9jsna97853c66886"
+            "x-rapidapi-key": ""
         }
     }
 $.ajax(settings).done(function (response) {
@@ -136,11 +136,11 @@ function displayTitleResults(searchMovie){
                 console.log(translatedServices)
     
                 if ($.inArray(service, translatedServices) != -1){
-                    $("#yourServices").append("<li>❂ " + service + "<a href=" + results[titleIndex].streams[s] + " target='_blank'> Watch Here</a></li>");
+                    $("#yourServices").append("<li>❂ " + service + "<a href=" + results[titleIndex].streams[s] + " target='_blank'> Watch It</a></li>");
                 } else if(service == "dunno"){
                     console.log("Hit an unsupported service")
                 } else {
-                    $("#otherServices").append("<li>❂ " + service + "<a href=" + results[titleIndex].streams[s] + " target='_blank'> Watch Here</a></li>");
+                    $("#otherServices").append("<li>❂ " + service + "<a href=" + results[titleIndex].streams[s] + " target='_blank'> Watch It</a></li>");
                 }
                 
             }
@@ -152,8 +152,6 @@ $("#submit").on("click", function(){
     utellyMovie(searchTerm)
     displayTitleResults(searchTerm)
 })
-
-
 
 services = localStorage.getItem("services").split(',')
 console.log(services)
@@ -208,8 +206,6 @@ for (var i = 0; i < services.length; i++){
         translatedServices.push(serviceName)
     }
 
-    sub = $('<div class="ltyellow navbar-item is-size-4">'+serviceName+'</div>')
-    $("#subscriptions").prepend(sub)
+    sub = $('<div class="gold navbar-item is-size-4 pt-2">'+serviceName+'</div>')
+    $("#subscriptions").append(sub)
 }
-
-
