@@ -1,26 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WatchIt</title>
+
+    <!--Bulma CDN-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!--My StyleSheet-->
+    <link rel="stylesheet" href="search.css">
+
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Paytone+One&display=swap" rel="stylesheet">
+    
+    <!--FontAwesome CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+  </head>
   
-</head>
-<body>
-    <div class="container">
-        <h1>Search use notation 'sword-art-online' 'cowboy-bebop'</h1>
+  <body>
+    <div id="wrapper">
+      <!--Navbar Section-->
+      <nav class="navbar is-success">
+        <div class="navbar-brand">
+          <h1 class="has-text-weight-bold is-size-3 pl-3 paytone ltyellow mr-1">WatchIt</h1>
+          <h1 class="fas fa-film is-size-3 pt-2 has-text-white"></h1>
+        </div> 
 
-    <div id="anime-view"></div>
-    <br>
-    <form id="anime-form">
-        <label for="anime-input">Search</label>
-        <input type="text" id="anime-input">
-        <br>
-        <input id="add-anime" type="submit" value="search">
-    </form>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="anime.js"></script>
+        <!--Previous Search Dropdown-->
+        <div class="navbar-end">
+          
+          <!--SearchBar Header-->
+          <div class="navbar-item">
+            <h2 class="paytone purp is-size-5">What do you want to watch?</h2>
+          </div>
 
-</body>
+          <!--Actual SearchBar-->
+          <div class="navbar-item">
+            <input id="searchBar" class="input is-rounded is-loading oswald pborder" type="text" placeholder="Search">
+          </div>
+
+          <!--Submit Search Button-->
+          <div class="navbar-item">
+            <button id="submit" class="button has-text-white is-rounded oswald pborder">Search this title</button>
+          </div>
+          <div class="navbar-item dropdown is-hoverable">
+            <div class="dropdown-trigger">
+              <button class="button is-rounded oswald is-size-6 has-text-white pborder" aria-haspopup="true" aria-controls="dropdown-menu">
+                <span>Your previous searches</span>
+                <span class="icon is-small">
+                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                </span>
+              </button>
+            </div>
+
+            <!--Previous Searched Items-->
+            <div class="dropdown-menu" id="dropdown-menu" role="menu">
+              <div class="dropdown-content" id="oldSearches">
+                <div class="dropdown-item is-rounded has-text-centered oswald is-size-6">
+                  You haven't searched anything (yet)!
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    
+      <!--Search Results-->
+      <div class="container mt-6 is-hidden box" id="showResultsDiv">
+        <h2 class="paytone purp pt-3 mb-3 pl-3 is-size-3">Search Results:</h2>
+        <ul class="columns is-multiline px-3" id="resultsList">
+          <!-- Populated by js -->
+        </ul>    
+      </div>
+
+      <!--Container of selected search result info-->
+      <div class="container mt-6 is-hidden" id="showInfoDiv">
+        <div class="columns">
+          <div class="column is-10 is-offset-1">
+            
+            <!--Show/movie info-->
+            <div class="paytone box is-size-4" id="titleSelect">
+              <!-- Populated by js -->
+            </div>
+            <div class="columns">
+              <div class="column mt-3 mb-3 is-4 is-offset-2 mr-3">
+                <div id="showImgDiv" class="image box px-5 py-5">
+                  <img id="picture" src="" alt="image from show">
+                </div>
+              </div>
+              <!--Services for show-->
+              <div class="column box mt-5 mb-5 is-4" id="servicesDiv">
+                <div class="pt-5 pl-5 is-size-5 ltyellow">
+                  <h2 class="paytone has-text-weight-bold">Your Services:</h2>
+                  <ul id="yourServices" class="oswald">
+                    <!-- Populated by js -->
+                  </ul>
+                </div>
+                <div class="pt-3 pl-5 is-size-5 ltyellow pb-5">
+                  <h2 class="paytone has-text-weight-bold">Other Services:</h2>
+                  <ul id="otherServices" class="oswald">
+                    <!-- Populated by js -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div id="showBlurb" class="box">
+              <h3 class="paytone has-text-weight-bold">Genre:</h3>
+              <div class="oswald" id="selectGenre"></div>
+              <h3 class="paytone has-text-weight-bold">Runtime:</h3>
+              <div class="oswald" id="selectRuntime"></div>
+              <h3 class="paytone has-text-weight-bold">Director:</h3>
+              <div class="oswald" id="selectDirector"></div>
+              <h3 class="paytone has-text-weight-bold">Description:</h3>
+              <div class="oswald" id="selectDesc"></div>
+              <h3 class="paytone has-text-weight-bold">Actors:</h3>
+              <div class="oswald" id="selectActors"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!--Footer-->
+    <nav class="navbar fix-footer is-success mx-1" id="footer">
+      <div class="navbar-brand has-text-weight-bold pink paytone is-size-5 pl-3">Your Services:</div>
+      <div id="subscriptions" class="oswald navbar-item is-size-5">
+        <!-- Populated by JS -->
+        <img src="assets/crunchyroll_logo.jpg" width="50">
+        <img src="assets/funimation.png" width="50">
+        <img src="assets/tubi.jpg" width="50">
+      </div>  
+      
+      <div class="navbar-end">
+        <a class="is-size-5 has-text-white pr-3" href="index.html">Change</a>
+      </div>
+    </nav>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+  <script src="anime.js"></script>
+  </body>
 </html>

@@ -1,3 +1,12 @@
+/// bugs to fix
+/// has to use "-" in between spaces "cowboy-bebop"
+//"stores in stoage as undefined first then as a defined key"
+// using the (this).attr to color in with the OMDB API id challenging do to 
+// the first bug above "bleach" for example will work but cowboy bebop will not 
+// do to the space issue
+
+
+
 
 function sAnime(searchAnime){
   
@@ -72,6 +81,29 @@ function displayTitleResults(searchAnime){
         $("#resultsList").append(listItem)
         $("#showResultsDiv").removeClass("is-hidden")
         }
+
+         $(".movieSel").on("click", function(){
+            $("#yourServices").empty()
+            animeSearch = $(this).attr("anime-search")
+            result = JSON.parse(localStorage.getItem(animeSearch))
+            animeIndex = $(this).attr("anime-index")
+            $("#showInfoDiv").removeClass("is-hidden");
+            $("#titleSelect").text(results[animeIndex].Atitle);
+            // $("#titleSelect").html("<center>" + results[animeIndex].title );
+            // $("#picture").attr("src", results[animeIndex].picture);
+            // $("#selectGenre").text(results[animeIndex].genre);
+            // $('#selectActors').text(results[animeIndex].actors);
+            $("#selectDesc").text(results[animeIndex].Danime);
+            //$("#picture").attr("iframe",result[animeIndex].YID)
+            // $("#selectRuntime").text(results[animeIndex].runtime);
+            console.log(results[animeIndex])
+            $("#yourServices").append(result);
+                 //create an element to hold Streaming serive
+        
+                // if myServicesList contans service append to #yourServices
+                // else append to #otherServices
+      
+        }) 
       
 }
 
@@ -82,23 +114,5 @@ sAnime(searchTerm)
 displayTitleResults(searchTerm)
 })
 
-    // $(".movieSel").on("click", function(){
-        //     $("#yourServices").empty()
-        //     animeSearch = $(this).attr("anime-search")
-        //     results = JSON.parse(localStorage.getItem(animeSearch))
-        //     animeIndex = $(this).attr("anime-index")
-        //     $("#showInfoDiv").removeClass("is-hidden");
-        //     $("#titleSelect").html("<center>" + results[animeIndex].title );
-        //     $("#picture").attr("src", results[animeIndex].picture);
-        //     $("#selectGenre").text(results[animeIndex].genre);
-        //     $('#selectActors').text(results[animeIndex].actors);
-        //     $("#selectDesc").text(results[animeIndex].plot);
-        //     $("#selectRuntime").text(results[animeIndex].runtime);
-        //     console.log(results[animeIndex])
-        //     $("#yourServices").append(streams);
-        //          //create an element to hold Streaming serive
-        
-        //         // if myServicesList contans service append to #yourServices
-        //         // else append to #otherServices
-      
-        // }) 
+$("#titleSelect").html("<center>" + result[animeIndex].Atitle );
+$("#picture").attr("iframe", results[animeIndex].YID);
