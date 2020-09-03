@@ -1,4 +1,4 @@
-.navbar {
+#header {
     border-bottom: solid 5px white;
     padding: 8px;
 }
@@ -9,6 +9,10 @@ nav h1 {
 
 .paytone {
     font-family: 'Paytone One', sans-serif;  
+}
+
+.gold {
+    color: #FFD166;
 }
 
 .ltyellow {
@@ -44,7 +48,7 @@ nav h1 {
     background: rgba(72,199,116, 0.8);
 }
 
-a {
+#servicesDiv a {
     color: white;
     font-style: italic;
 }
@@ -80,8 +84,10 @@ a {
 
 #footer {
     border-top: solid 5px white;
-    padding-top: 10px;
+    width: 100%;
+    background-color: #861657;
 }
+
 
 body {
     background-image: url(assets/pexels-pixabay-265685.jpeg);
