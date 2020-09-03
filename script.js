@@ -1,17 +1,28 @@
+var searchHistory = []
+var translatedServices = []
 function utellyMovie(searchMovie){
-var settings = {
-	"async": false,
-	"crossDomain": true,
-	"url": "https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term="+searchMovie+"&country=us",
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com",
-		"x-rapidapi-key": "5cd25c1681mshc17a6de27e4095fp17a9c9jsna97853c66886"
-	}
-}
-
+    searchHistory.push(searchMovie)
+    $('#oldSearches').empty(); 
+    for(var s = 0; s < searchHistory.length; s++){
+        $("#oldSearches").append('<div class="dropdown-item is-rounded has-text-centered oswald is-size-6"><button class="button p-border histBtn has-text-white" title="'+searchHistory[s]+'">' + searchHistory[s] + '</button></div>')
+    }
+    $(".histBtn").on("click", function(){
+        movieTitle = $(this).attr("title")
+        console.log(movieTitle)
+        displayTitleResults(movieTitle)
+    })
+    var settings = {
+        "async": false,
+        "crossDomain": true,
+        "url": "https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term="+searchMovie+"&country=us",
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com",
+            "x-rapidapi-key": "5cd25c1681mshc17a6de27e4095fp17a9c9jsna97853c66886"
+        }
+    }
 $.ajax(settings).done(function (response) {
-    // console.log(response);
+    console.log(response);
     term = response.term
     // Create a list for the search result titles
     showResults = []
@@ -23,7 +34,6 @@ $.ajax(settings).done(function (response) {
             "picture": response.results[i].picture,
             "imdbId": response.results[i].external_ids.imdb.id,
             "streams": [],
-            "actors" : "",
         }
         // Push each result to the showResults list
         showResults.push(result)
@@ -86,7 +96,7 @@ function displayTitleResults(searchMovie){
             for (var s = 0; s < results[titleIndex].streams.length; s++) {
                 var service;
                 var streamUrls = results[titleIndex].streams[s];
-                console.log(results[titleIndex].streams[s])
+                //console.log(results[titleIndex].streams[s])
                 if (streamUrls.includes("netflix")){
                     service = "Netflix";
                 } else if (streamUrls.includes("itunes.apple")){
@@ -98,7 +108,7 @@ function displayTitleResults(searchMovie){
                 } else if (streamUrls.includes("youtube")){
                     service = "Youtube Premium";
                 } else if (streamUrls.includes("disney")){
-                    service = "Disney Plus";
+                    service = "Disney +";
                 } else if (streamUrls.includes("hbo")){
                     service = "HBO";
                 } else if (streamUrls.includes("cbs")){
@@ -116,26 +126,90 @@ function displayTitleResults(searchMovie){
                 } else if (streamUrls.includes(".discovery")){
                     service = "Discovery Channel";
                 } else if (streamUrls.includes("tv.apple")){
-                    service = "Apple TV";
+                    service = "AppleTV +";
                 } else {
                     service = "dunno";
                 }
-                
-                $("#yourServices").append("<li>❂ " + service + "<a href=" + results[titleIndex].streams[s] + " target='_blank'> Watch Here</a></li>");
-
-
-            
-            }
-
-        })
+                // if myServicesList contans service append to #yourServices
+                // else append to #otherServices
+                console.log(service)
+                console.log(translatedServices)
     
+                if ($.inArray(service, translatedServices) != -1){
+                    $("#yourServices").append("<li>❂ " + service + "<a href=" + results[titleIndex].streams[s] + " target='_blank'> Watch Here</a></li>");
+                } else if(service == "dunno"){
+                    console.log("Hit an unsupported service")
+                } else {
+                    $("#otherServices").append("<li>❂ " + service + "<a href=" + results[titleIndex].streams[s] + " target='_blank'> Watch Here</a></li>");
+                }
+                
+            }
+        })   
 }
-
 $("#submit").on("click", function(){
     event.preventDefault()
     var searchTerm = $("#searchBar").val().trim().toLowerCase()
     utellyMovie(searchTerm)
     displayTitleResults(searchTerm)
 })
-  
-  
+
+
+
+services = localStorage.getItem("services").split(',')
+console.log(services)
+for (var i = 0; i < services.length; i++){
+    if (services[i] === "netflix"){
+        serviceName = "Netflix"
+        translatedServices.push(serviceName)
+    } else if (services[i] === "atp"){
+        serviceName = "AppleTV +"
+        translatedServices.push(serviceName)
+    } else if (services[i] === "apv"){
+        serviceName = "Amazon Prime"
+        translatedServices.push(serviceName)
+    } else if (services[i] === "youtube"){
+        serviceName = "YouTube Premium"
+        translatedServices.push(serviceName)
+    } else if (services[i] === "disneyplus"){
+        serviceName = "Disney +"
+        translatedServices.push(serviceName)
+    } else if (services[i] === "hbo"){
+        serviceName = "HBO"
+        translatedServices.push(serviceName)
+    } else if (services[i] === "fox"){
+        serviceName = "Fox"
+        translatedServices.push(serviceName)
+    } else if (services[i] === "cbs"){
+        serviceName = "CBS"
+        translatedServices.push(serviceName)
+    } else if (services[i] === "nbc"){
+        serviceName = "NBC"
+        translatedServices.push(serviceName)
+    } else if (services[i] === "nick"){
+        serviceName = "Nickelodeon"
+        translatedServices.push(serviceName)
+    } else if (services[i] === "discovery"){
+        serviceName = "Discovery Channel"
+        translatedServices.push(serviceName)
+    } else if (services[i] === "dcuniverse"){
+        serviceName = "DC Universe"
+        translatedServices.push(serviceName)
+    } else if (services[i] === "amazoninstant"){
+        serviceName = "Amazon Instant"
+        translatedServices.push(serviceName)
+    } else if (services[i] === "googleplay"){
+        serviceName = "Google Play"
+        translatedServices.push(serviceName)
+    } else if (services[i] === "itunes"){
+        serviceName = "iTunes"  
+        translatedServices.push(serviceName)
+    } else if (services[i]===("hulu")){
+        serviceName = "Hulu"
+        translatedServices.push(serviceName)
+    }
+
+    sub = $('<div class="ltyellow navbar-item is-size-4">'+serviceName+'</div>')
+    $("#subscriptions").prepend(sub)
+}
+
+

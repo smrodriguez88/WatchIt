@@ -49,10 +49,6 @@ a {
     font-style: italic;
 }
 
-.tabs a {
-    color: white;
-    
-}
 
 .button {
     background-color: #EF476F;
@@ -80,6 +76,11 @@ a {
 
 #wrapper {
     flex: 1;
+}
+
+#footer {
+    border-top: solid 5px white;
+    padding-top: 10px;
 }
 
 body {
