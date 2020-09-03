@@ -1,5 +1,24 @@
 # WatchIt
 
+## Description
+
+Welcome to the WatchIt experience! The days of searching endlessly for your favorite TV shows and Movies are over.
+Powered by the leading databases for entertainment, our app gives you instant access to thousands of Movies and TV shows 
+from all genres!
+
+In the app, you are able to filter your results to the streaming platforms that you’re exclusively subscribed to! 
+If your preferred streaming platform doesn’t have the Movie or TV show available, our app will list the platform that does! 
+Once your eye is set on a selection simply click or tap the “Watch It” button to begin viewing.
+
+## Instructions
+```
+Select all services you subscribe to and services you're willing to pay to watch titles on and click "Continue"
+
+On the search page you will see your selections on the footer, if you wish to change your selections please click "Change"
+
+Search for your specified title. Results will appear below. Select your desired result to see additional information and title streaming links.
+
+```
 
 ## User Story
 
@@ -20,3 +39,7 @@ WHEN I can input a searchable TV Show or Movie I am presented with information a
 THEN I can see what services I subscribe to where I can watch the specific TV Show/Movie
 THEN I am presented with a clickable link where I can watch my show
 ```
+
+![WatchIt-1](./Assets/screenshot-1.png)
+![WatchIt-2](./Assets/screenshot-2.png)
+![WatchIt-3](./Assets/screenshot-3.png)
