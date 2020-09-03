@@ -1,16 +1,19 @@
-var searchTerm = encodeURI("Robocop")
-
-var settings = {
-	"async": false,
-	"crossDomain": true,
-	"url": "https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term="+searchTerm+"&country=us",
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com",
-		"x-rapidapi-key": ""
-	}
-}
-
+var searchHistory = []
+var translatedServices = []
+function utellyMovie(searchMovie){
+   
+    ///setting for AJAX
+    var settings = {
+        "async": false,
+        "crossDomain": true,
+        "url": "https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term="+searchMovie+"&country=us",
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com",
+            "x-rapidapi-key": "5cd25c1681mshc17a6de27e4095fp17a9c9jsna97853c66886"
+        }
+    }
+    //ajax call
 $.ajax(settings).done(function (response) {
     console.log(response);
     term = response.term
@@ -32,38 +35,72 @@ $.ajax(settings).done(function (response) {
         for(var v = 0; v < response.results[i].locations.length; v++){
             // Set apply the URL link of the streaming source to the streams list as the iterator value of v
             showResults[i].streams[v] = response.results[i].locations[v].url
+        }}
+        for (var a = 0; a < showResults.length; a++){
+            // console.log(showResults)
+            imdbid = showResults[a].imdbId
+
+            //
+            var Key="3d6175eb"
+            var MURL="http://www.omdbapi.com/?i="+imdbid+"&apikey="+Key
+            var settings = {
+                "async": false,
+                "url": MURL,
+                "method": "GET"}
+            $.ajax(settings).done(function(response){
+                showResults[a].picture = response.Poster
+                showResults[a].actors = response.Actors
+                showResults[a].plot = response.Plot
+                showResults[a].director = response.Director
+                showResults[a].genre = response.Genre
+                showResults[a].runtime = response.Runtime
+                showResults[a].year = response.Year               
+            })
+        localStorage.setItem(term, JSON.stringify(showResults))
+}})};
+
+function displayTitleResults(searchMovie){
+    results = JSON.parse(localStorage.getItem(searchMovie))
+    console.log(results)
+    $("#resultsList").empty()
+    for (var i = 0; i < results.length; i++){
+        titleBtn = $("<button>").addClass("button has-text-white paytone pborder mb-1 ml-3 movieSel").text(results[i].title + " " + "("+results[i].year+")")
+        titleBtn.attr("title-search", searchMovie)
+        titleBtn.attr("title-index", i)
+        titleDesc = $("<p>").addClass("oswald pl-3").text(results[i].plot)
+        listItem = $("<li>").addClass("mb-3")
+        listItem.append(titleBtn)
+        listItem.append(titleDesc)
+        $("#resultsList").append(listItem)
+        $("#showResultsDiv").removeClass("is-hidden")
         }
-    console.log(showResults)
-    localStorage.setItem(term, JSON.stringify(showResults))
-}});
+        $(".movieSel").on("click", function(){
+            $("#yourServices").empty()
+            titleSearch = $(this).attr("title-search")
+            results = JSON.parse(localStorage.getItem(titleSearch))
+            titleIndex = $(this).attr("title-index")
+            $("#showInfoDiv").removeClass("is-hidden");
+            $("#titleSelect").html("<center>" + results[titleIndex].title + " (" + results[titleIndex].year + ")</center>");
+            $("#picture").attr("src", results[titleIndex].picture);
+            $("#selectGenre").text(results[titleIndex].genre);
+            $("#selectRuntime").text(results[titleIndex].runtime);
+            $("#selectDirector").text(results[titleIndex].director);
+            $("#selectDesc").text(results[titleIndex].plot);
+            $("#selectActors").text(results[titleIndex].actors);
+            console.log(results[titleIndex])
+            
 
 
-
-function sMovie(searchMovie){
-    var Key="3d6175eb"
-    var MURL="http://www.omdbapi.com/?i="+searchMovie+"&apikey="+Key
-  $.ajax({
-      url:MURL,
-      method:"GET"
-    }).then(function(response){ 
-      console.log(response)
-      console.log(response.Actors)
-      console.log(response.Plot)
-      console.log(response.Directors)
-      console.log(response.Title)
-      console.log(response.Genre)
-      console.log(response.Runtime)
-      console.log(response.Year)
-  
+    
       
-      //creating variable for teh attributes
-      var actors=(response.Actors)
-      var plot=(response.Plot)
-      var directors=(response.Directors)
-     
-  
-    })
-  
-  }
-  sMovie('tt1234721')
-  
+        })   
+}
+$("#submit").on("click", function(){
+    event.preventDefault()
+    var searchTerm = $("#searchBar").val().trim().toLowerCase()
+    utellyMovie(searchTerm)
+    displayTitleResults(searchTerm)
+})
+
+
+
