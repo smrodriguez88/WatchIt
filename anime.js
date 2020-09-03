@@ -94,7 +94,7 @@ function displayTitleResults(searchAnime){
             // $("#selectGenre").text(results[animeIndex].genre);
             // $('#selectActors').text(results[animeIndex].actors);
             $("#selectDesc").text(results[animeIndex].Danime);
-            //$("#picture").attr("iframe",result[animeIndex].YID)
+            //$("#picture").attr(results[animeIndex].YID)
             // $("#selectRuntime").text(results[animeIndex].runtime);
             console.log(results[animeIndex])
             $("#yourServices").append(result);
