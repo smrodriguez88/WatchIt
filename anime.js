@@ -15,7 +15,7 @@ $.ajax({
     url:"https://kitsu.io/api/edge/anime?include=streamingLinks&filter[slug]="+searchAnime,
     method:"GET"
   }).then(function(response){
-    
+    //console.log(response)
     //list to stopre results 
   showResults=[]
   //come back to this
@@ -37,7 +37,12 @@ $.ajax({
       "Atitle":response.data[i].attributes.canonicalTitle,
       //var fot the description
       "Danime":response.data[i].attributes.synopsis,
-      "YID":response.data[i].attributes.youtubeVideoId
+      "YID":response.data[i].attributes.youtubeVideoId,
+      "Ranime":response.data[i].attributes.popularityRank,
+      "Ganime":response.data[i].attributes.showType,
+      "Sanime":response.data[i].attributes.startDate,
+      "Lanime":response.data[i].attributes.totalLength
+
       
   //result bracket
     }
@@ -91,11 +96,11 @@ function displayTitleResults(searchAnime){
             $("#titleSelect").text(results[animeIndex].Atitle);
             // $("#titleSelect").html("<center>" + results[animeIndex].title );
             // $("#picture").attr("src", results[animeIndex].picture);
-            // $("#selectGenre").text(results[animeIndex].genre);
-            // $('#selectActors').text(results[animeIndex].actors);
+            $("#selectGenre").text(results[animeIndex].Ganime);
+            $('#selectActors').text(results[animeIndex].Ranime);
             $("#selectDesc").text(results[animeIndex].Danime);
             //$("#picture").attr(results[animeIndex].YID)
-            // $("#selectRuntime").text(results[animeIndex].runtime);
+            $("#selectRuntime").text(results[animeIndex].Sanime);
             console.log(results[animeIndex])
             $("#yourServices").append(result);
                  //create an element to hold Streaming serive
