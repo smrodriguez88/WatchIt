@@ -2,7 +2,8 @@
 var searchHistory = []
 var translatedServices = []
 
-// UTELLY API CALL
+// Method to search for movie by name using UTELLY API, included OMDB call in method as well due to some
+// issues experienced while troubleshooting intermingling code between teammates
 function utellyMovie(searchMovie){
     // Push searchMovie into searchHistory array for future reference
     searchHistory.push(searchMovie)
@@ -161,7 +162,7 @@ function displayTitleResults(searchMovie){
                     $("#yourServices").append("<li>❂ " + service + "<a href=" + results[titleIndex].streams[s] + " target='_blank'> Watch It</a></li>");
                 // BUGFIX for fandango as we do not want to populate movies in theaters
                 } else if(service == "dunno"){
-                    console.log("Hit an unsupported service")
+                //    console.log("Hit an unsupported service")
                 // If populate streaming link in otherServices
                 } else {
                     $("#otherServices").append("<li>❂ " + service + "<a href=" + results[titleIndex].streams[s] + " target='_blank'> Watch It</a></li>");
