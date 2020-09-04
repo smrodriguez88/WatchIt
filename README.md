@@ -40,6 +40,6 @@ THEN I can see what services I subscribe to where I can watch the specific TV Sh
 THEN I am presented with a clickable link where I can watch my show
 ```
 
-![WatchIt-1](./Assets/screenshot-1.png)
-![WatchIt-2](./Assets/screenshot-2.png)
-![WatchIt-3](./Assets/screenshot-3.png)
+![WatchIt-1](./assets/screenshot-1.png)
+![WatchIt-2](./assets/screenshot-2.png)
+![WatchIt-3](./assets/screenshot-3.png)
