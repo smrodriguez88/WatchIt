@@ -17,7 +17,7 @@ function utellyMovie(searchMovie){
     $(".histBtn").on("click", function(){
         // Movie Title is the Title attribute of the button
         movieTitle = $(this).attr("title")
-        console.log(movieTitle)
+        //console.log(movieTitle)
         displayTitleResults(movieTitle)
     })
     // Settings for AJAX call, setting async to false to get around response delay
@@ -32,7 +32,7 @@ function utellyMovie(searchMovie){
         }
     }
 $.ajax(settings).done(function (response) {
-    console.log(response);
+    //console.log(response);
     term = response.term
     // Create a list for the search result titles
     showResults = []
@@ -72,7 +72,7 @@ $.ajax(settings).done(function (response) {
                 showResults[a].director = response.Director
                 showResults[a].genre = response.Genre
                 showResults[a].runtime = response.Runtime
-                showResults[a].year = response.Year               
+                showResults[a].year = response.Year             
             })
         // Store fully populated JSON objects in localStorage
         localStorage.setItem(term, JSON.stringify(showResults))
