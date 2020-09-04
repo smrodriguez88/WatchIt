@@ -39,7 +39,14 @@ WHEN I can input a searchable TV Show or Movie I am presented with information a
 THEN I can see what services I subscribe to where I can watch the specific TV Show/Movie
 THEN I am presented with a clickable link where I can watch my show
 ```
+## Screenshots
 
 ![WatchIt-1](./assets/screenshot-1.png)
 ![WatchIt-2](./assets/screenshot-2.png)
 ![WatchIt-3](./assets/screenshot-3.png)
+
+## Review
+
+* Deployed Application - WatchIt - https://smrodriguez88.github.io/WatchIt/
+
+* Github Repository - WatchIt - https://github.com/smrodriguez88/WatchIt
